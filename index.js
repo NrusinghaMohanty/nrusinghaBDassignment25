@@ -206,7 +206,7 @@ const filterByExchange = (value, exchange) => {
 app.get('/stocks/filter/exchange',(req, res) => {
   let exchange = req.query.exchange
   let exchangeType = stocks.filter((value)=> filterByExchange (value,exchange))
-  res.json(exchangeType)
+  res.json({ stocks: exchangeType })
 })
 
 
@@ -218,7 +218,7 @@ const filterByIndustry = (value, industry) => {
 app.get('/stocks/filter/industry',(req, res) => {
   let industry = req.query.industry
   let industryType = stocks.filter((value)=> filterByIndustry (value,industry))
-  res.json(industryType)
+  res.json({ stocks: industryType })
 })
 
 
